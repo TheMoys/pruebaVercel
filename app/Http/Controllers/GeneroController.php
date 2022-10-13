@@ -14,7 +14,9 @@ class GeneroController extends Controller
      */
     public function index()
     {
-        //
+        $generos = Genero::all();
+
+        return $generos;
     }
 
     /**
@@ -35,7 +37,11 @@ class GeneroController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $genero = new Genero();
+
+        $genero->genero = $request->genero;
+
+        $genero->save();
     }
 
     /**
@@ -69,7 +75,13 @@ class GeneroController extends Controller
      */
     public function update(Request $request, Genero $genero)
     {
-        //
+        $genero = Genero::findOrFail($request->id);
+
+        $genero->genero = $request->genero;
+
+        $genero->save();
+
+        return $genero;
     }
 
     /**
@@ -78,8 +90,9 @@ class GeneroController extends Controller
      * @param  \App\Models\Genero  $genero
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Genero $genero)
+    public function destroy(Request $request)
     {
-        //
+        $genero = Genero::destroy($request->id);
+        return $genero;
     }
 }

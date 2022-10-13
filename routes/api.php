@@ -79,3 +79,10 @@ Route::get('/cancionesPlay', 'App\Http\Controllers\CancionesPlaylistController@i
 Route::post('/cancionesPlay', 'App\Http\Controllers\CancionesPlaylistController@store');//YA FUNCIONAL PARA INSERTAR REGISTROS
 Route::put('/cancionesPlay/{id}', 'App\Http\Controllers\CancionesPlaylistController@update');//YA FUNCIONAL PARA ACTUALIZAR REGISTROS
 Route::delete('/cancionesPlay/{id}', 'App\Http\Controllers\CancionesPlaylistController@destroy');//YA FUNCIONAL PARA ELIMINAR REGISTROS
+
+
+//RUTAS PARA LOS GENEROS MUSICALES
+Route::get('/generos', 'App\Http\Controllers\GeneroController@index');                  //YA FUNCIONAL PARA MOSTRAR REGISTROS
+Route::post('/generos', 'App\Http\Controllers\GeneroController@store');                 //YA FUNCIONAL PARA INSERTAR REGISTROS
+Route::put('/generos/{id}', 'App\Http\Controllers\GeneroController@update');            //YA FUNCIONAL PARA ACTUALIZAR REGISTROS
+Route::delete('/generos/{id}', 'App\Http\Controllers\GeneroController@destroy');        //YA FUNCIONAL PARA ELIMINAR REGISTROS
